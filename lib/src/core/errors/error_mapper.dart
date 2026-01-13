@@ -181,9 +181,9 @@ Failure _mapPostgrestException(PostgrestException e, StackTrace? st) {
   final code = e.code?.trim();
 
   // Some Postgres error codes can indicate validation/constraint errors.
-  // Example:Unique violation : 23505
-  // Not null violation:23502
-  //Foreign key violation: 23503 .
+  // Example:Unique violation: 23505
+  // Not null violation: 23502
+  // Foreign key violation: 23503 .
   final isConstraint = code == '23505' || code == '23502' || code == '23503';
 
   return isConstraint
